@@ -4,10 +4,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <style>
+
+
 * {
     box-sizing: border-box;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
+    height: auto;
 }
 
 .page-wrap {
@@ -122,9 +125,10 @@ input[type=text]:hover, input[type=text]:focus{
 
 .content {
   display: inline-block;
+  word-wrap: break-word;
   width: 90vh;
   height: 30vh;
-  margin: 5px;
+  margin: 10px;
   margin-left: 55px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
@@ -175,21 +179,12 @@ input[type=text]:hover, input[type=text]:focus{
   transition: 0.3s;
 }
 
-.inner-img:hover {
-  height: 55%;
-  z-index: 999;
-}
-
 .upload-img {
   height: 80%;
   padding: 5px;
   transition: 0.3s;
 }
 
-.upload-img:hover {
-  height: 100%;
-  z-index: 999;
-}
 
 .load-button {
   margin: 0 auto;
@@ -198,6 +193,120 @@ input[type=text]:hover, input[type=text]:focus{
   background-color: #ccced1;
   padding: 5px;
   margin-top: 10px;
+}
+
+/* Media Queries */
+
+/*Laptop-L Device */
+@media only screen and (max-width : 1200px){
+  *{
+    font-size: 1em;
+  }  
+
+}
+
+/*Laptop Device */
+@media only screen and (max-width : 979px){
+  *{
+    font-size: 0.8em;
+  }
+  
+  .inner-img {
+  height: 25%;
+  vertical-align:middle;
+  transition: 0.3s;
+}
+
+.upload-img {
+  height: 60%%;
+  padding: 5px;
+  transition: 0.3s;
+}
+
+.nav-img {
+  display: block;
+  margin: auto;
+  height: 55px;
+}
+
+}
+
+/*Tab Device */
+@media only screen and (max-width : 767px){
+  *{
+    font-size: 0.7em;
+  }
+
+    .inner-img {
+  height: 20%;
+  vertical-align:middle;
+  transition: 0.3s;
+}
+
+.upload-img {
+  height: 55%%;
+  padding: 5px;
+  transition: 0.3s;
+}
+
+.nav-img {
+  display: block;
+  margin: auto;
+  height: 50px;
+}
+  
+ 
+}
+
+/*Mobile Device */
+@media only screen and (max-width : 480px){
+  *{
+    font-size: 0.6em;
+  }
+   
+     .inner-img {
+  height: 20%;
+  vertical-align:middle;
+  transition: 0.3s;
+}
+
+.upload-img {
+  height: 50%;
+  padding: 5px;
+  transition: 0.3s;
+}
+
+.nav-img {
+  display: block;
+  margin: auto;
+  height: 45px;
+}
+
+}
+
+/*Mobile-S Device */
+@media only screen and (max-width : 320px){
+  *{
+    font-size: 0.5em;
+  }
+       .inner-img {
+  height: 15%;
+  vertical-align:middle;
+  transition: 0.3s;
+}
+
+.upload-img {
+  height: 40%;
+  padding: 5px;
+  transition: 0.3s;
+}
+
+.nav-img {
+  display: block;
+  margin: auto;
+  height: 20px;
+}
+
 }
 
 
@@ -261,7 +370,7 @@ input[type=text]:hover, input[type=text]:focus{
              <img class="author" src="girl.png"><span>Darla</span>
              <div class="inner-content">
              <p class="inner-head"><b>Agenda of Discussion</b></p>
-             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
              </div>
              <img class="inner-img" style="" src="file_icon.svg"><span>preview_v1.docx</span>
            </div>
@@ -293,9 +402,9 @@ input[type=text]:hover, input[type=text]:focus{
            </div>
          </div>
        </div>
-       
-      </div>
        <div class="load-button">SHOW MORE</div> 
+      </div>
+       
     </div>
   </div>
 
