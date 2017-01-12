@@ -2,35 +2,36 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <style>
 * {
     box-sizing: border-box;
     margin: 0;
-   font-family: "Open Sans";
-    
+    font-family: 'Open Sans', sans-serif;
 }
 
-
+.page-wrap {
+  display: flex;
+}
 
 .main {
     width: 90%;
     float: left;
-    height: 100vh;
+    height: auto;
     background-color: #e8ebef;
+}
+.main-wrapper {
+  width: 95%;
+  margin:auto;
+  height: auto;
 }
 .side-bar{
   width: 10%;
   float: left;
+  height: auto;
   background-color: #4a4a4a;
-  height: 100vh;
 }
-.head {
-    width: 75%;
-    float: left;
-    padding: 15px;
-    border: 1px solid red;
-}
+
 
 #block {
   background-color: #3399ff;
@@ -44,44 +45,261 @@
 
 .search-bar{
   margin: auto;
-  width: 95%;
   padding: 10px;
 }
 input[type=text]{
   width: 100%;
-  height: 5vh;
+  height: 7vh;
   border: 1px solid #f2f2f2;
   color: #4a4a4a;
   cursor: default;
-  font-size: 14px;
+  font-size: 24px;
   font-weight: bold;
+  outline-color: #ccced1;
 }
 input[type=text]:hover, input[type=text]:focus{
     box-shadow: 0 1px 1px rgba(0,0,0,0.4);
     border: none;
     outline: none;
 }
+
+.checkboxes {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #e8ebef;
+}
+
+.checkboxes li {
+  display: inline;
+  padding: 10px;
+}
+
+.white-box {
+  background-color: white;
+  height: auto;
+  margin: 10px;
+}
+
+#load-button {
+  position: relative;
+  right:0;
+  bottom: 0;
+}
+
+.nav-box {
+  display: flex;
+  height: 100px;
+  outline: 1px solid #696969;
+  transition: 0.3s;
+}
+
+.nav-box:hover {
+  background-color: #e8ebef;
+}
+
+.nav-img {
+  display: block;
+  margin: auto;
+  height: 60px;
+}
+
+/*TimeLine*/
+.bar {
+  position: relative;
+  width: 6px;
+  padding-top: 50px;
+  background: #ccced1;
+  margin-left: 30px;
+
+}
+
+.bar-icon {
+  height: 40px;
+  left: -10px;
+  display: inline-block;
+}
+
+.content {
+  display: inline-block;
+  width: 90vh;
+  height: 30vh;
+  margin: 5px;
+  margin-left: 55px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.content:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.block {
+  display: flex;
+}
+
+.date-block {
+  background-color: #ccced1;
+  display: inline-block;
+  color: #4a4a4a;
+  font-size: 11px;
+  width: 40px;
+}
+
+.author {
+  border-radius: 50%;
+  height: 30%;
+  margin: 5px;
+  vertical-align:middle;
+  transition: 0.3s;
+}
+
+.author:hover {
+  height: 60%;
+}
+
+.inner-content {
+  padding: 5px;
+  font-size: 13px;
+}
+
+.inner-head {
+  text-align: center;
+  font-size: 14px;
+  padding: 2px;
+}
+
+.inner-img {
+  height: 30%;
+  vertical-align:middle;
+  transition: 0.3s;
+}
+
+.inner-img:hover {
+  height: 55%;
+  z-index: 999;
+}
+
+.upload-img {
+  height: 80%;
+  padding: 5px;
+  transition: 0.3s;
+}
+
+.upload-img:hover {
+  height: 100%;
+  z-index: 999;
+}
+
+.load-button {
+  margin: 0 auto;
+  width: 100vh;
+  text-align: center;
+  background-color: #ccced1;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+
 </style>
 </head>
 <body>
+<div class="page-wrap">
 
-<div class="side-bar">
-  <div id="block"></div>
-  <div class="nav-items"></div>
-</div>
+  <div class="side-bar">
+    <div id="block"></div>
+    <div class="nav-items">
+      <div class="nav-box"><img class="nav-img" src="guy.png"></div>
+      <div class="nav-box"><img class="nav-img" src="idea.png"></div>
+      <div class="nav-box"><img class="nav-img" src="block.png"></div>
+      <div class="nav-box"><img class="nav-img" src="dice.png"></div>
+      <div class="nav-box"><img class="nav-img" src="search-logo.svg"></div>
+      <div class="nav-box"><img class="nav-img" src="blocks.svg"></div>
+    </div>
+  </div>
 
-<div class="main">
-  <div class="search-head">
-    <h3 align="left" style="padding: 10px;">35 search results for "Preview"</h3>
+  <div class="main">
+    <div class="search-head">
+      <p align="left">35 search results for "Preview"</p>
+    </div>
+    <div class="main-wrapper">
+      <div class="search-bar">
+         <input type="text" name="search" placeholder="Search">
+      </div>
+      <div>
+        <ul class="checkboxes">
+          <li>
+            <input type="checkbox" id="c1" />
+            <label>Todos</label>
+          </li>
+          <li>
+            <input type="checkbox" id="c2" />
+            <label>Discussions</label>
+          </li>
+          <li>
+            <input type="checkbox" id="c3" />
+            <label>Files</label>
+          </li>
+          <li>
+            <input type="checkbox" id="c4" />
+            <label>Progress</label>
+          </li>
+          <li>
+            <input type="checkbox" id="c5" />
+            <label>Team Members</label>
+          </li>
+        </ul>
+      </div>
+      <div class="white-box">
+       <div class="timeline">
+         <div class="block">
+           <div class="bar">
+             <img class="bar-icon" src="files.svg">
+             <div class="date-block">17 JULY</div>
+           </div>
+           <div class="content">
+             <img class="author" src="girl.png"><span>Darla</span>
+             <div class="inner-content">
+             <p class="inner-head"><b>Agenda of Discussion</b></p>
+             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+             </div>
+             <img class="inner-img" style="" src="file_icon.svg"><span>preview_v1.docx</span>
+           </div>
+         </div>
+         <div class="block">
+           <div class="bar">
+             <img class="bar-icon" src="files.svg">
+             <div class="date-block">17 JULY</div>
+           </div>
+            <div class="content">
+             <img class="upload-img" src="skill_test_front-end.png">
+             <img class="upload-img" src="skill_test_front-end.png">
+             <img class="upload-img" src="skill_test_front-end.png">
+             <p>Upload by Stymie</p>
+           </div>
+         </div>
+         <div class="block">
+           <div class="bar">
+             <img class="bar-icon" src="files.svg">
+             <div class="date-block">17 JULY</div>
+           </div>
+           <div class="content">
+             <img class="author" src="guy2.png"><span>Alfalfa</span>
+             <div class="inner-content">
+             <p class="inner-head"><b>Agenda of Discussion</b></p>
+             <p>Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
+             </div>
+             <img class="inner-img" style="" src="file_icon.svg"><span>preview_v1.docx</span>
+           </div>
+         </div>
+       </div>
+       
+      </div>
+       <div class="load-button">SHOW MORE</div> 
+    </div>
   </div>
-  <div class="search-bar">
-     <input type="text" name="search" placeholder="Search">
-  </div>
-  <div class="checkboxes">
-    <ul>
-      <li></li>
-    </ul>
-  </div>
+
+
 </div>
 
 
